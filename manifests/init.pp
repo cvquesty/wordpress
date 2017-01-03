@@ -24,7 +24,6 @@ class wordpress {
   wordpress::extract { $name:
     version => $version,
     docroot => $docroot,
-    require => Exec[ 'extractit' ],
   }
 
 }
