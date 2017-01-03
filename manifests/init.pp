@@ -19,7 +19,6 @@ class wordpress {
 
   wordpress::fetch { $name:
     version => $version,
-    docroot => $docroot,
   }
 
   wordpress::extract { $name:
