@@ -12,10 +12,10 @@
 #
 #
 #
-class wordpress (
-  $version,
-  $docroot,
-) inherits wordpress::params {
+class wordpress {
+
+  $version = $::wordpress::params::version
+  $docroot = $::wordpress::params::docroot
 
   wordpress::fetch { $name:
     version => $version,
