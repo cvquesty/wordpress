@@ -1,24 +1,30 @@
 # Class: wordpress
 # ===========================
 #
-# Full description of class wordpress here.
+# Module to install Wordpress, create a Database, and complete initial
+# Configuration to automate creation of Wordpress sites.
 #
-# Parameters
-# ----------
+# === Parameters
 #
-# * `sample parameter`
-#   Explanation of what this parameter affects and what it defaults to.
-#   e.g. "Specify one or more upstream ntp servers as an array."
+# [*version*] The version of Wordpress you wish to install
+# [*docroot*] The destination docroot *inside* of Apache's default destination
+#   - (in this case /var/www/html) to extract the Wordpress tarball
+#
+#
 #
 class wordpress (
-  $package_name = $::wordpress::params::package_name,
-  $service_name = $::wordpress::params::service_name,
-) inherits ::wordpress::params {
+  $version,
+  $docroot,
+) inherits wordpress::params {
 
-  # validate parameters here
+  wordpress::fetch { $name:
+    version => $version,
+    docroot => $docroot,
+  }
 
-  class { '::wordpress::install': } ->
-  class { '::wordpress::config': } ~>
-  class { '::wordpress::service': } ->
-  Class['::wordpress']
+  wordpress::extract { $name:
+    version => $version,
+    require => Exec[ 'extractit' ],
+  }
+
 }
