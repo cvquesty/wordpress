@@ -6,8 +6,8 @@
 # [*version*] Version of Wordpress to extract
 # [*docroot*] Destination Document Root for Wordpress
 define wordpress::extract (
-  Number $version,
-  String $docroot,
+  $version,
+  $docroot,
 ) {
 
   exec { 'extractit':

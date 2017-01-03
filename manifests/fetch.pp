@@ -5,7 +5,7 @@
 # [*version*] Version number of Wordpress to download
 #
 define wordpress::fetch (
-  Number $version,
+  $version,
 ) {
 
   # Check that the archive actually exists
