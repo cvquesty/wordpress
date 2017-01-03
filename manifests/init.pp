@@ -13,17 +13,4 @@
 #
 #
 class wordpress {
-
-  $version = $::wordpress::params::version
-  $docroot = $::wordpress::params::docroot
-
-  wordpress::fetch { $name:
-    version => $version,
-  }
-
-  wordpress::extract { $name:
-    version => $version,
-    docroot => $docroot,
-  }
-
 }
