@@ -13,5 +13,6 @@ define wordpress::extract (
   exec { 'extractit':
     onlyif  => "/bin/test -f /var/tmp/wordpress-${version}.tar.gz",
     command => "/usr/bin/tar -zxvf /var/tmp/wordpress-${version}.tar.gz --strip 1 -C /var/www/html/${docroot}",
+    require => Exec[ 'getit' ],
   }
 }
