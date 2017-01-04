@@ -19,7 +19,7 @@ class wordpress::config (
   $db_user         = $::wordpress::params::dbuser,
   $db_password     = $::wordpress::params::dbpass,
   $db_host         = $::wordpress::params::dbhost,
-  $wp_table_prefix = $::wordpress::params::tablepre,
+  $wp_table_prefix = $::wordpress::params::tablpre,
   $wp_debug        = $::wordpress::params::wpdebug
 
 ) inherits wordpress::params {
