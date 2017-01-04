@@ -10,5 +10,6 @@ class wordpress::params {
   $dbpass  = 'B@sslin3'
   $dbhost  = 'localhost'
   $tablpre = 'wp_'
+  $wpdebug = 'false'
 
 }

@@ -9,6 +9,7 @@
 # [*db_password*]     DB User Password to use
 # [*db_host*]         Node on which the database resides
 # [*wp_table_prefix*] Prefix, if any, you want prepended to table
+# [*wp_debug*]        Whether to place Wordpress into debug mode
 #
 class wordpress::config (
 
@@ -19,6 +20,7 @@ class wordpress::config (
   $db_password     = $::wordpress::params::dbpass,
   $db_host         = $::wordpress::params::dbhost,
   $wp_table_prefix = $::wordpress::params::tablepre,
+  $wp_debug        = $::wordpress::params::wpdebug
 
 ) inherits wordpress::params {
 
