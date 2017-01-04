@@ -14,15 +14,19 @@
 #
 class wordpress {
 
+  $wpversion  = $::wordpress::params::version
+  $sysdocroot = $::wordpress::params::docroot
+
   # Fetch the Wordpress Archive
   wordpress::fetch { $name:
-    version => '4.7',
-    docroot => 'questy.org',
+    version => $wpversion,
+    docroot => $sysdocroot,
   }
 
   # Extract the Wordpress Archive
   wordpress::extract { $name:
-    version => '4.7',
-    docroot => 'questy.org',
+    version => $wpversion,
+    docroot => $sysdocroot,
   }
+
 }
