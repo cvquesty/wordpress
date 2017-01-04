@@ -14,6 +14,4 @@
 #
 class wordpress {
 
-  include [ '::wordpress::fetch' ]
-  include [ '::wordpress::extract' ]
 }
