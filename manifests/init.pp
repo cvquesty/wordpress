@@ -32,6 +32,7 @@ class wordpress (
   }
 
   # Add Wordpress Configuration
-  include [ '::wordpress::config' ]
+  include ::wordpress::config
+  include ::wordpress::db
 
 }
