@@ -10,7 +10,7 @@ define wordpress::fetch (
 
   # Check that the archive actually exists
   exec { 'getit':
-    command => "/usr/bin/wget https://wordpress.org/wordpress-${version}.tar.gz -P /var/tmp/wordpress-${version}.tar.gz",
+    command => "/usr/bin/wget https://wordpress.org/wordpress-${version}.tar.gz -P /var/tmp",
   }
 
 }
