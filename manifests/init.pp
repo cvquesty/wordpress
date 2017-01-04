@@ -6,16 +6,18 @@
 #
 # === Parameters
 #
-# [*version*] The version of Wordpress you wish to install
-# [*docroot*] The destination docroot *inside* of Apache's default destination
+# [*wpversion*] The version of Wordpress you wish to install
+# [*sysdocroot*] The destination docroot *inside* of Apache's default destination
 #   - (in this case /var/www/html) to extract the Wordpress tarball
 #
 #
 #
-class wordpress {
+class wordpress (
 
-  $wpversion  = $::wordpress::params::version
-  $sysdocroot = $::wordpress::params::docroot
+  $wpversion  = $::wordpress::params::version,
+  $sysdocroot = $::wordpress::params::docroot,
+
+) inherits wordpress::params {
 
   # Fetch the Wordpress Archive
   wordpress::fetch { $name:
