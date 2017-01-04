@@ -14,4 +14,15 @@
 #
 class wordpress {
 
+  # Fetch the Wordpress Archive
+  wordpress::fetch { $name:
+    version => '4.7',
+    docroot => 'questy.org',
+  }
+
+  # Extract the Wordpress Archive
+  wordpress::extract { $name:
+    version => '4.7',
+    docroot => 'questy.org',
+  }
 }
