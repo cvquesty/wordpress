@@ -14,6 +14,7 @@ define wordpress::fetch (
   exec { 'getit':
     unless  => "/bin/test -f /var/www/html/${docroot}/wp-comments-post.php",
     command => "/usr/bin/wget https://wordpress.org/wordpress-${version}.tar.gz -P /var/tmp",
+    before  => Exec[ 'extractit' ],
   }
 
 }
