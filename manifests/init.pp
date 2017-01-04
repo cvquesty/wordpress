@@ -31,4 +31,7 @@ class wordpress (
     docroot => $sysdocroot,
   }
 
+  # Add Wordpress Configuration
+  include [ '::wordpress::config' ]
+
 }
