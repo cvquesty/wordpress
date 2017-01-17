@@ -10,6 +10,6 @@ class wordpress::params {
   $dbpass  = 'bassline'
   $dbhost  = 'localhost'
   $tablpre = 'wp_'
-  $wpdebug = 'false'
+  $wpdebug = false
 
 }
