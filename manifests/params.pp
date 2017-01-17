@@ -3,12 +3,12 @@
 class wordpress::params {
 
   # Wordpress parameters
-  $version = '4.7'
-  $docroot = 'questy.org'
-  $dbname  = 'questy_org'
-  $dbuser  = 'admin'
-  $dbpass  = 'bassline'
-  $dbhost  = 'localhost'
+  $version = ''
+  $docroot = ''
+  $dbname  = ''
+  $dbuser  = ''
+  $dbpass  = 'e'
+  $dbhost  = ''
   $tablpre = 'wp_'
   $wpdebug = false
 
